@@ -391,7 +391,7 @@ esp_Loop = rs.RenderStepped:Connect(function()
 end)
 
 plrs.PlayerRemoving:Connect(function(v)
-    for i2,v2 in pairs(esp.players[v]) do
+    for v2 in pairs(esp.players[v]) do
         pcall(function()
             v2:Remove()
             v2:Destroy()
@@ -406,7 +406,7 @@ esp.Unload = function()
     esp_Loop = nil
     
     for i,v in pairs(esp.players) do
-        for i2, v2 in pairs(v) do
+        for v2 in pairs(v) do
             if v2 == "cham" then
                 v2:Destroy()
             else
